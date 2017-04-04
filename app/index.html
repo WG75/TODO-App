@@ -10,11 +10,26 @@
     <!-- endbuild-->
   </head>
   <body>
-    <div id = "app" v-bind:class="style">
-      {{message}}
+
+    <div class="container">
+      <h1>to-do app</h1>
+
+      <ul class="app">
+        <li class="todo list-item">
+          <span class="todo-text">something on the list</span>
+          <button class="remove btn">X</button>
+        </li>
+
+        <li class="new list-item">
+          <input class="add-todo" type="text">
+          <button class="add btn">+</button>
+        </li>
+      </ul>
     </div>
 
-    <h1>is it workingdsdsdfffdddffddddfff</h1>
+
+
+
     <!-- build:js script/app.mini.js-->
     <script src="https://unpkg.com/vue@2.2.6"></script>
     <script src="script/es5/script.js"></script>
