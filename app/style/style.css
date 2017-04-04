@@ -42,4 +42,7 @@ body {
       margin: 10px 0; }
     .container .app .new .add-todo {
       flex: 1;
-      align-self: stretch; }
+      align-self: stretch;
+      vertical-align: top; }
+    .container .app .todo-template {
+      display: none; }
