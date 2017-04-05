@@ -24,7 +24,7 @@
     todoClone.classList.remove('todo-template');
     todoClone.querySelector('.todo-text').textContent = val;
 
-    appList.appendChild(todoClone);
+    appList.insertBefore(todoClone, input.parentNode);
   };
 
   addButton.addEventListener('click', app.getInputValue);
