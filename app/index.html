@@ -19,8 +19,8 @@
         <todo v-for="todo in todos" v-bind:todo="todo"></todo>
 
         <li class="new list-item">
-          <input class="add-todo" type="text">
-          <button class="add btn">+</button>
+          <input v-model="todo" class="add-todo" type="text">
+          <button v-on:click="addTodo" class="add btn">+</button>
         </li>
       </ul>
     </div>
