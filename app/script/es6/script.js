@@ -1,40 +1,18 @@
 (() => {
-  "use strict";
 
-  const addButton = document.querySelector('.add');
-  const removeButton = document.querySelector('.remove');
-  const input = document.querySelector('.add-todo');
-  const todoTemplate = document.querySelector('.todo-template')
-  const appList = document.querySelector('.app');
-  const app = {};
+  Vue.component('todo', {
+     props: ['todo'],
+     template: '<li class="todo list-item">' +
+                 '<span class="todo-text">{{todo}}</span>' +
+                 '<button class="remove btn">X</button>' +
+               '</li>'
+   })
 
-
-  app.getInputValue = function getValue(){
-    var val = input.value
-
-    if(!val) return;
-
-    app.addTodo(val);
-  }
-
-  app.addTodo = function addTodo(val){
-    var todoClone = todoTemplate.cloneNode(true);
-
-    todoClone.classList.remove('todo-template')
-    todoClone.querySelector('.todo-text').textContent = val;
-
-    appList.insertBefore(todoClone, input.parentNode);
-  }
-
-
-  addButton.addEventListener('click', app.getInputValue);
-
-
-  appList.addEventListener('click', (e) => {
-    var target = e.target;
-
-    if(target.classList.contains('remove')){
-      target.parentNode.remove();
+  const app = new Vue({
+    el: '.app',
+    data: {
+      todos: ['1', '2', '3', '4', '5', '6', '7']
     }
   })
+
 })();
