@@ -14,7 +14,7 @@
     <div class="container">
       <h1>to-do app</h1>
 
-      <ul class="app">
+      <ul class="app" v-on:click="removeTodo">
 
         <todo v-for="todo in todos" v-bind:todo="todo"></todo>
 

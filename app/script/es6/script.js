@@ -10,6 +10,7 @@
 
   const app = new Vue({
     el: '.app',
+
     data: {
       todos: [],
       todo: ''
@@ -17,9 +18,19 @@
 
     methods: {
       addTodo: function() {
-        console.log(this.todos)
+        if(!this.todo) return;
+        this.todos.push(this.todo);
+      },
+
+      removeTodo: function(e){
+        if(e.target.classList.contains(remove)){
+          e.target.parentNode.remove();
+        }
       }
     }
   })
+
+
+
 
 })();
